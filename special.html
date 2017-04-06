@@ -137,7 +137,8 @@ document.write('<script src="//sharebutton.net/plugin/sharebutton.php?type=verti
 
 
                 <div class="block-6">
-   <h3 class="p5"><font color="#DC143C">Call for Paper<storng>  October 2016</font><img src="images/new.gif" alt=""><br></h3>
+   <h3 class="p5"><font color="#DC143C"><storng><span class="monthDemo"></span>
+</font><img src="images/new.gif" alt=""><br></h3>
  <div class="about_wrap3">
 			               <h5><span>Conference Proposal:</span></h5><br>
                <font face="timesnewromens"><p class="top-1"> <strong><font color="#DC143C">IRG Journals</font></strong> special issue invites the papers from the NATIONAL CONFERENCE, INTERNATIONAL CONFERENCE, SEMINAR conducted by colleges, university, etc. The Group of paper will accept with some concession and will publish in IRG Journals as special issue. It is the platform for College, university, etc to share the knowledge.<br>
@@ -201,5 +202,56 @@ Histats.track_hits();} catch(err){};
           <p>&copy;Copyright IRG International Journals</p>
 
       </footer>
+ <script type="text/javascript">
+      function myFunction() {
+          var month = new Array();
+          month[0] = "January";
+          month[1] = "February";
+          month[2] = "March";
+          month[3] = "April";
+          month[4] = "May";
+          month[5] = "June";
+          month[6] = "July";
+          month[7] = "August";
+          month[8] = "September";
+          month[9] = "October";
+          month[10] = "November";
+          month[11] = "December";
+          var date = new Date(), y = date.getFullYear(), m = date.getMonth();
+          var firstDay = new Date(y, m, 1);
+          var lastDay = new Date(y, m + 1, 0);
+          //alert(lastDay.getDate());
+      
+          var d = new Date();
+          //var mon = month[d.getMonth()];
+          var year=d.getFullYear();
+          var monthClass=document.getElementsByClassName("monthDemo");
+          for(var i = 0, length = monthClass.length; i < length; i++) {
+            monthClass[i].innerHTML = "Call for paper "+ month[d.getMonth()]+" "+year;
+           }
+      
+          var dateClass=document.getElementsByClassName("dateDemo");
+          for(var j = 0, length1 = dateClass.length; j < length1; j++) {
+          	dateClass[j].innerHTML = lastDay.getDate() + " - " + month[d.getMonth()]+" "+year;
+          	//alert(lastDay.getDate() + " th " + month[d.getMonth()]+" "+year)
+           }
+          
+          var yearClass=document.getElementsByClassName("yearClass");
+          for(var j = 0, length1 = yearClass.length; j < length1; j++) {
+          	yearClass[j].innerHTML = month[d.getMonth()]+"  -  "+year;
+          	//alert(lastDay.getDate() + " th " + month[d.getMonth()]+" "+year)
+           }
+      
+      
+      
+      
+          /* document.getElementsByClassName("monthDemo").innerHTML = "Call for paper "+ month[d.getMonth()]+" "+year; */
+      }
+      
+      window.onload = function() {
+        myFunction();
+      };
+      
+</script>
   </body>
 </html>
